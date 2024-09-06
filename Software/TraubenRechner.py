@@ -26,7 +26,7 @@ Red100  = "#be0000"
 
 #variables
 
-    
+masse=int(1)
 
 # --- Functions ---
 
@@ -49,27 +49,30 @@ with st.container():
 st.title('Trauben-Rechner')
 st.write("---")
 
-option = st.selectbox(
-    "Bitte Art der Pressung Auswählen:",
-    ("PetNat - Ablaufsaft", "BRUT - Cuvéé", "PetNat - Pressaft"),
-)
 st.text("")
 #st.text("Ganztrauben KG")
-masse = st.number_input("Gewicht eingeben (KG):")
+masse = st.number_input("Gewicht eingeben (KG):",
+                        placeholder="Type a number...",
+                        value=None,
+                        step=1)
 
-if option == "PetNat - Ablaufsaft":
-    ResultatL = float((masse * 100) / 1800)
-elif option == "BRUT - Cuvéé":
-    ResultatL = float((masse * 900) / 1800)
-elif option == "PetNat - Pressaft":
-    ResultatL = float((masse * 300) / 1800)
 
-ResultatLrounded = round(ResultatL, 1)
+
 
 #st.header("Resultat in: " + str(ResultatLrounded) + "L")
     
 if st.button("Berechnen", type="primary"):
     # st.write("Instrument Error Status: ", st.session_state.instr1.query("*TST?"))
     
-    st.header(str(option)+ ": " + str(ResultatLrounded) + "L")
+    AblaufsaftL = float((masse * 100) / 1800)
+    CuveeL = float((masse * 900) / 1800)
+    PresssaftL = float((masse * 300) / 1800)
+
+    AblaufsaftLround = round(AblaufsaftL,1)
+    CuveeLround = round(CuveeL,1)
+    PresssaftLround = round(PresssaftL,1)
+
+    st.header(str("PetNat - Ablaufsaft: ") + str(AblaufsaftLround) + "L")
+    st.header(str("BRUT - Cuvéé: ") + str(CuveeLround) + "L")
+    st.header(str("PetNat - Presssaft: ") + str(PresssaftLround) + "L")
     
