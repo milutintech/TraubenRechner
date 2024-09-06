@@ -32,7 +32,7 @@ Red100  = "#be0000"
 
 
 # --- Main ---
-st.set_page_config(page_title="TraubenRechenr", page_icon=":rainbow:", layout="wide")
+st.set_page_config(page_title="TraubenRechenr", page_icon=":grapes:", layout="wide")
 
 # --- Title ---
 with st.container():
