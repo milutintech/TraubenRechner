@@ -72,7 +72,7 @@ if st.button("Berechnen", type="primary"):
     CuveeLround = round(CuveeL,1)
     PresssaftLround = round(PresssaftL,1)
 
-    st.header(str("PetNat - Ablaufsaft: ") + str(AblaufsaftLround) + "L")
-    st.header(str("BRUT - Cuvéé: ") + str(CuveeLround) + "L")
-    st.header(str("PetNat - Presssaft: ") + str(PresssaftLround) + "L")
+    st.header(str("PetNat - Ablaufsaft: ") + str(int(AblaufsaftLround)) + "L")
+    st.header(str("BRUT - Cuvéé: ") + str(int(CuveeLround)) + "L")
+    st.header(str("PetNat - Presssaft: ") + str(int(PresssaftLround)) + "L")
     
